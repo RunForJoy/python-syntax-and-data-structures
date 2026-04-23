@@ -42,4 +42,6 @@ def print_get_stocks():
         else:
             print(f"{request} is an unknown company or an unknown ticker symbol")
             
-print_get_stocks()
+
+if __name__ == '__main__':    
+    print_get_stocks()

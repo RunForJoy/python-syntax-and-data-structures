@@ -24,10 +24,6 @@ def convert_to_dict():
     ('Israel', '12')
     ]
     
-    #dct = {v: k for k, v in list_of_tuples}
-    #for k, v in dct.items():
-    #    print(f"{k} : {v}")
-
     dct_of_countries = {}
 
     for country, num in list_of_tuples:
@@ -39,5 +35,5 @@ def convert_to_dict():
             print(f"'{num}' : '{country}'")
 
 
-
-convert_to_dict()
+if __name__ == '__main__':    
+    convert_to_dict()

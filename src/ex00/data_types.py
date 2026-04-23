@@ -15,3 +15,4 @@ def data_types():
 
 if __name__ == '__main__':
     data_types()
+

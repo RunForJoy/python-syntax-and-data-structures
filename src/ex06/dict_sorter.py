@@ -25,8 +25,8 @@ def dict_sorter():
         ]
 
     dct_countries = {k: int(v) for k, v in list_of_tuples}
-    for k, v in dct_countries.items():
-        print(k, v)
+    for country, _ in sorted(dct_countries.items(), key = lambda item: (-item[1], item[0])):
+        print(country)
 
 
 if __name__ == '__main__':    

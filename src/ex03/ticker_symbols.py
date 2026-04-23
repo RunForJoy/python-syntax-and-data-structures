@@ -31,9 +31,11 @@ def print_ticker_info(ticker_name):
         print("Unknown ticker")
     elif company_name:
         print(f"{company_name} {ticker_price:.2f}")
-    
-if len(sys.argv) != 2:
-    sys.exit(0)
-else:
-    arg = (sys.argv[1]).upper()
-    print_ticker_info(arg)
+
+
+if __name__ == '__main__':    
+    if len(sys.argv) != 2:
+        sys.exit(0)
+    else:
+        arg = (sys.argv[1]).upper()
+        print_ticker_info(arg)

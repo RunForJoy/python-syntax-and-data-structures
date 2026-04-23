@@ -28,9 +28,11 @@ def print_stock_price(name):
         print(STOCKS[company_name])
     
 
+if __name__ == '__main__':
+    if len(sys.argv) != 2:
+        sys.exit(0)
+    else:
+        arg = (sys.argv[1]).capitalize()
+        print_stock_price(arg)
 
-if len(sys.argv) != 2:
-    sys.exit(0)
-else:
-    arg = (sys.argv[1]).capitalize()
-    print_stock_price(arg)
+
