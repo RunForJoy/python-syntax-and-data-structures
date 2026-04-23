@@ -19,16 +19,27 @@ def print_get_stocks():
     }
 
     if len(sys.argv) != 2:
-        sys.exit(0)
-    else:
-        raw_input = sys.argv[1].split(",")
-        cleaned_input = [word.strip() for word in raw_input]
-        if not all([len[word] for word in cleaned_input]):
-            sys.exit(0)
+        return
+
+    raw_input = sys.argv[1].split(",")
+    cleaned_input = [word.strip() for word in raw_input]
+    
+    if any([word=="" for word in cleaned_input]):
+        return
         
-
-
-        
-
-     
+    for request in cleaned_input:
+        if request.capitalize() in COMPANIES:
+            company = request.capitalize()
+            ticker = COMPANIES[company]
+            print(f"{company} stock price is {STOCKS[ticker]:.2f}")
+        elif request.upper() in STOCKS:
+            ticker = request.upper()
+            for company_name, ticker_name in COMPANIES.items():
+                if ticker == ticker_name:
+                    company = company_name
+                    print(f"{ticker} is a ticker symbol for {company}")
+                    break
+        else:
+            print(f"{request} is an unknown company or an unknown ticker symbol")
+            
 print_get_stocks()
